@@ -1,0 +1,1 @@
+1. Run the thiago_eg-00.hex with USB stick
