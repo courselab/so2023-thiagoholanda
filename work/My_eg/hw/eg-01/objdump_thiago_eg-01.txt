@@ -1,0 +1,54 @@
+
+thiago_eg-01.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	b4 0e                	mov    ah,0xe
+   2:	b0 48                	mov    al,0x48
+   4:	cd 10                	int    0x10
+   6:	b0 65                	mov    al,0x65
+   8:	cd 10                	int    0x10
+   a:	b0 6c                	mov    al,0x6c
+   c:	cd 10                	int    0x10
+   e:	b0 6c                	mov    al,0x6c
+  10:	cd 10                	int    0x10
+  12:	b0 6f                	mov    al,0x6f
+  14:	cd 10                	int    0x10
+  16:	b0 20                	mov    al,0x20
+  18:	cd 10                	int    0x10
+  1a:	b0 57                	mov    al,0x57
+  1c:	cd 10                	int    0x10
+  1e:	b0 6f                	mov    al,0x6f
+  20:	cd 10                	int    0x10
+  22:	b0 72                	mov    al,0x72
+  24:	cd 10                	int    0x10
+  26:	b0 6c                	mov    al,0x6c
+  28:	cd 10                	int    0x10
+  2a:	b0 64                	mov    al,0x64
+  2c:	cd 10                	int    0x10
+  2e:	b0 20                	mov    al,0x20
+  30:	cd 10                	int    0x10
+  32:	b0 6f                	mov    al,0x6f
+  34:	cd 10                	int    0x10
+  36:	b0 66                	mov    al,0x66
+  38:	cd 10                	int    0x10
+  3a:	b0 20                	mov    al,0x20
+  3c:	cd 10                	int    0x10
+  3e:	b0 54                	mov    al,0x54
+  40:	cd 10                	int    0x10
+  42:	b0 68                	mov    al,0x68
+  44:	cd 10                	int    0x10
+  46:	b0 69                	mov    al,0x69
+  48:	cd 10                	int    0x10
+  4a:	b0 61                	mov    al,0x61
+  4c:	cd 10                	int    0x10
+  4e:	b0 67                	mov    al,0x67
+  50:	cd 10                	int    0x10
+  52:	b0 6f                	mov    al,0x6f
+  54:	cd 10                	int    0x10
+  56:	f4                   	hlt    
+  57:	eb fd                	jmp    0x56
+	...
+ 1fd:	00 55 aa             	add    BYTE PTR [di-0x56],dl

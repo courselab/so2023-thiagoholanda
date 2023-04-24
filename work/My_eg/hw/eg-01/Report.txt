@@ -1,0 +1,13 @@
+The thiago_eg-01.asm was made to present "Hello World of Thiago"
+
+The command: "nasm thiago_eg-01.asm -f bin -o eg-01.bin" was used.
+
+After that, the command: "qemu-system-i386 -drive format=raw,file=thiago_eg-01.bin -net none" was executed and worked.
+
+The objdump file was created with: "objdump -M intel -b binary -m i8086 -D thiago_eg-01.bin  > objdump_thiago_eg-01.txt"
+
+The objdump file of thiago_eg-00.txt was made going into the folder of eg-00 and used the command: "objdump -M intel -b binary -m i8086 -D thiago_eg-00.bin > objdump_thiago_eg-00.txt"
+
+To compare, the following command was used: "meld eg-00/objdump_thiago_eg-00.txt eg-01/objdump_thiago_eg-01.txt"
+
+The objdump files are the same.
