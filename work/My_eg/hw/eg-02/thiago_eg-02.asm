@@ -6,9 +6,9 @@
 	mov bx, 0x00
 loop:
 	mov al, [msg + bx]
-	int 0x10
 	cmp al, 0x00
 	je halt
+	int 0x10
 	add bx, 0x01
 	jmp loop
 halt:

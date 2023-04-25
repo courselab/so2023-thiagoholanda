@@ -1,1 +1,4 @@
 1. Run the thiago_eg-00.hex with USB stick
+2. Create the bin file for egx-01.S
+3. Use the command in the slide 20 in part 4.
+4. Re-assemble again the thiago_eg-02.asm
