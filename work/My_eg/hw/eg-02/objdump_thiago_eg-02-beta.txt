@@ -1,0 +1,28 @@
+
+thiago_eg-02-beta.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000 <.data>:
+   0:	b4 0e                	mov    ah,0xe
+   2:	bb 00 00             	mov    bx,0x0
+   5:	8a 87 17 7c          	mov    al,BYTE PTR [bx+0x7c17]
+   9:	cd 10                	int    0x10
+   b:	3c 00                	cmp    al,0x0
+   d:	74 05                	je     0x14
+   f:	83 c3 01             	add    bx,0x1
+  12:	eb f1                	jmp    0x5
+  14:	f4                   	hlt    
+  15:	eb fd                	jmp    0x14
+  17:	48                   	dec    ax
+  18:	65 6c                	gs ins BYTE PTR es:[di],dx
+  1a:	6c                   	ins    BYTE PTR es:[di],dx
+  1b:	6f                   	outs   dx,WORD PTR ds:[si]
+  1c:	20 57 6f             	and    BYTE PTR [bx+0x6f],dl
+  1f:	72 6c                	jb     0x8d
+  21:	64 20 6f 66          	and    BYTE PTR fs:[bx+0x66],ch
+  25:	20 54 68             	and    BYTE PTR [si+0x68],dl
+  28:	69 61 67 6f 00       	imul   sp,WORD PTR [bx+di+0x67],0x6f
+	...
+ 1fd:	00 55 aa             	add    BYTE PTR [di-0x56],dl

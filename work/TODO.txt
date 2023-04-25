@@ -1,2 +1,1 @@
 1. Run the thiago_eg-00.hex with USB stick
-2. Resume in the "Hellow World (part 3) - Assembly" presentation in slide 7 "Load address"

@@ -1,0 +1,34 @@
+The thiago_eg-02-alpha.asm and thiago_eg-02-beta.asm were made according with Hello World (part 3)
+
+The following commands were:
+nasm thiago_eg-02-alpha.asm -f bin -o thiago_eg-02-alpha.bin
+nasm thiago_eg-02-beta.asm -f bin -o thiago_eg-02-beta.bin
+
+After that:
+qemu-system-i386 -drive format=raw,file=thiago_eg-02-alpha.bin -net none
+qemu-system-i386 -drive format=raw,file=thiago_eg-02-beta.bin -net none
+
+The thiago_eg-02-alpha.bin didn't work not presenting "Hello World of Thiago"
+
+The thiago_eg-02-beta.bin worked presenting "Hello World of Thiago"
+
+The comparison between the files is done by:
+objdump -M intel -b binary -m i8086 -D thiago_eg-02-alpha.bin  > objdump_thiago_eg-02-alpha.txt
+
+objdump -M intel -b binary -m i8086 -D thiago_eg-02-beta.bin  > objdump_thiago_eg-02-beta.txt
+
+meld objdump_thiago_eg-02-alpha.txt objdump_thiago_eg-02-beta.txt
+
+The thiago_eg-02.asm was made with directive 'org' and using the following commands:
+
+nasm thiago_eg-02.asm -f bin -o thiago_eg-02.bin
+qemu-system-i386 -drive format=raw,file=thiago_eg-02.bin -net none
+
+It worked. Now the objdump is created by:
+
+objdump -M intel -b binary -m i8086 -D thiago_eg-02.bin  > objdump_thiago_eg-02.txt
+
+The comparison is done via command:
+meld objdump_thiago_eg-02-beta.txt objdump_thiago_eg-02.txt
+
+They are the same.
