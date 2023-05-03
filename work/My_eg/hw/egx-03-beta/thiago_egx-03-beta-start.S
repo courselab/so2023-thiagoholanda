@@ -1,8 +1,8 @@
 	.code16
 
-	.global begin
+	.global _start
 
-begin:	
+_start:	
 	mov $0x0e, %ah
 	mov $0x00, %si
 loop:
@@ -19,5 +19,5 @@ halt:
 msg:
 	.string "Hello World of Thiago"
 
-	.fill 510 - (.-begin),1 , 00
+	.fill 510 - (.-_start),1 , 00
 	.word 0xaa55
