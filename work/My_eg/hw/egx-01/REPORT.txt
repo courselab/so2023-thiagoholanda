@@ -1,0 +1,7 @@
+as -32 -msyntax=intel -mnaked-reg thiago_egx-01.S -o thiago_egx-01.o
+
+ld -melf_i386 --oformat=binary -Ttext=0x7c00 -e 0x7c00 thiago_egx-01.o -o thiago_egx-01.bin
+
+objdump -M intel -b binary -m i8086 -D thiago_egx-01.bin  > objdump_thiago_egx-01.txt
+
+meld ../eg-02/objdump_thiago_eg-02.txt objdump_thiago_egx-01.txt

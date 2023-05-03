@@ -1,4 +1,4 @@
-	.code 16
+	.code16
 
 _start:	
 
@@ -6,9 +6,9 @@ _start:
 	mov bx, 0x00
 loop:
 	mov al, BYTE PTR [msg + bx]
-	int 0x10
 	cmp al, 0x00
 	je halt
+	int 0x10
 	add bx, 0x01
 	jmp loop
 halt:
@@ -16,7 +16,7 @@ halt:
 	jmp halt
 
 msg:
-	.string 'Hello World of Thiago'
+	.string "Hello World of Thiago"
 
 	.fill 510 - (.-_start), 1, 0
 	.word 0xaa55

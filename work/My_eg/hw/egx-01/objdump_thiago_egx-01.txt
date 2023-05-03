@@ -1,5 +1,5 @@
 
-thiago_eg-02.bin:     file format binary
+thiago_egx-01.bin:     file format binary
 
 
 Disassembly of section .data:
