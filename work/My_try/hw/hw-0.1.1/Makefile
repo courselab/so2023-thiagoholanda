@@ -1,14 +1,14 @@
 #  Makefile - Make script.
 # 
-#   Copyright (c) <YEAR>, <AUTHOR> 
+#   Copyright (c) 2023, Thiago H. C. Rego 
 #
 #   This piece of software is a derivative work of SYSeg, by Monaco F. J.
 #   SYSeg is distributed under the license GNU GPL v3, and is available
 #   at the official repository https://www.gitlab.com/monaco/syseg.
 #
-#   This file is part of <PROJECT>.
+#   This file is part of SYseg.
 #
-#   <PROJECT> is free software: you can redistribute it and/or modify
+#   SYSeg is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
 #   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
@@ -34,8 +34,11 @@ all: # hw-hex hw-s hw-c
 hw-hex.bin : hw.hex hex2bin
 	./hex2bin $< $@ 
 
-hw-s.bin : hw.S
-	@echo "Edit this rule"
+hw-s.bin : hw-s.o
+	ld -melf_i386 --oformat=binary -Ttext=0x7c00  $< -o $@
+
+hw-s.o : hw.S
+	as --32 $< -o $@
 
 hw-c.bin : hw.c
 	@echo "Edit this line"
