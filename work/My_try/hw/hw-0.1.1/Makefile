@@ -40,8 +40,20 @@ hw-s.bin : hw-s.o
 hw-s.o : hw.S
 	as --32 $< -o $@
 
-hw-c.bin : hw.c
-	@echo "Edit this line"
+hw-c.s : hw.c stdio.h 
+	gcc -m16 -O0 -I. -Wall -fno-pic -fcf-protection=none  --freestanding -S $< -o $@
+
+hw-c_utils.s  : hw-c_utils.c 
+	gcc -m16 -O0 -I. -Wall -fno-pic  -fcf-protection=none --freestanding -S $< -o $@
+
+hw-c_rt0.s  : hw-c_rt0.c 
+	gcc -m16 -O0 -I. -Wall -fno-pic  -fcf-protection=none -S $< -o $@
+
+hw-c.o hw-c_utils.o  hw-c_rt0.o : %.o : %.s
+	as --32 $*.s -o $@
+
+hw-c.bin: hw-c.o hw-c_utils.o hw-c.ld | hw-c_rt0.o
+	ld -melf_i386 -T hw-c.ld --orphan-handling=discard  $< -o $@
 
 hex2bin : hex2bin.c
 	gcc $< -o $@

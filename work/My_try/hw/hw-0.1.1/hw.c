@@ -21,7 +21,14 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include <stdio.h>
 
+int main (void){
+
+  printf ("Hello World of Thiago hw-c");
+  
+  return 0;
+}
 
 
 
