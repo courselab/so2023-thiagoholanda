@@ -1,14 +1,14 @@
-/* hw-c_rt0.c - rt0 C file
+/* <file> - <One-line note about this file>
  
-   Copyright (c) 2023, Thiago H. C. Rego
+   Copyright (c) <YEAR>, <AUTHOR> 
 
    This piece of software is a derivative work of SYSeg, by Monaco F. J.
    SYSeg is distributed under the license GNU GPL v3, and is available
    at the official repository https://www.gitlab.com/monaco/syseg.
 
-   This file is part of SYseg.
+   This file is part of <PROJECT>.
 
-   SYseg is free software: you can redistribute it and/or modify
+   <PROJECT> is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
@@ -23,32 +23,17 @@
 */
 
 
-/* This symbol is defined in the linker script. */
 
-extern void __END_STACK__;
+#ifndef DEBUG_H
+#define DEBUG_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <string.h>
+#include <libgen.h>
 
-/* Call main and halt. 
-
-   This is where main() returns to,
-
-   as do regular programs e.g. in GNU/Linux OS. */
-
-void __attribute__((naked)) _start()
-{
-__asm__ 
-(
-"             mov  $__END_STACK__ , %sp  \n"
-"             call main                  \n"
-"halt:                                   \n"
-"             hlt                        \n"
-"             jmp halt                   \n"
-);
-}
+#define sysfatal(exp) do{if(exp) {fprintf(stderr, "%s : %d : %s\n", __FILE__, __LINE__, strerror(errno)); exit(EXIT_FAILURE);}}while(0)
 
 
-/* Notes.
-
-   Our rt0 file is now C with inline asm.
-
- */
+#endif	/* DEBUG_H */
